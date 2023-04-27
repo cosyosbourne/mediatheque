@@ -1,0 +1,49 @@
+{
+  "films": [
+    {
+      "nom": "Fargo",
+      "real": "Les frères Cohen",
+      "synopsis": "Une galère dans le Dakota du Nord, des accents à couper au couteau, de la neige",
+      "annee": 1996,
+      "img": "https://flxt.tmsimg.com/assets/p17672_p_v8_at.jpg",
+      "details": "",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "nom": "Massacre à la Tronçonneuse 2",
+      "real": "Tobe Hooper",
+      "synopsis": "La famille revient en forme, Chop Top le grand déglingos nous fait passer un bon moment, on en redemande.",
+      "annee": 1986,
+      "img": "https://m.media-amazon.com/images/M/MV5BMDNjNTg3MWUtNjUxNi00MzYxLWJmODctNTg0ZmI1Zjc2Y2Q0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+      "details": ""
+    },
+    {
+      "nom": "The Shining",
+      "real": "Kubrick",
+      "synopsis": "Gros zbeul à l'Overlook Hotel, ça en vaut le détour.",
+      "annee": 1980,
+      "img": "https://render.fineartamerica.com/images/rendered/default/poster/8/10/break/images/artworkimages/medium/3/the-shining-the-axe-bo-kev.jpg",
+      "details": "Le mec arrive à l'interview et hop il est embauché, après il ramène sa mif pour passer tout l'hiver confiné et il pète les plombs en essayant d'écrire son bouqin de ses morts, tout ça parce qu'il gère mal son passif d'alcoolique violent. Au final il se fait boloss par sa go qui lui remet les idées en place avec un bon coup de batte, direct dans la tempe.",
+      "id": 6
+    }
+  ],
+  "albums": [
+    {
+      "id": 4,
+      "nom": "Radical",
+      "artiste": "Every Time I Die",
+      "annee": 2021,
+      "img": "https://www.coreandco.fr/upload/pics/albums2/big/every-time-i-die-radical-8585.jpg",
+      "details": "OOooooomph"
+    },
+    {
+      "id": 5,
+      "nom": "Hungry Ghost",
+      "artiste": "Violent Soho",
+      "annee": 2014,
+      "img": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61p8H3qqt5L._SX450_.jpg",
+      "details": "Yeah yeah yeah yeah yeah yeah"
+    }
+  ]
+}

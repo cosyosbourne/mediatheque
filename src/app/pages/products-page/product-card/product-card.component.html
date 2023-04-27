@@ -1,0 +1,50 @@
+<!-- NB : Pour utiliser les cartes, pensez à bien importer le module dans `app.module.ts` !!!! -->
+<!-- Génération de la carte à proprement parler -->
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <!-- Ici, on fait en sorte que le nom soit tronqué pour pas qu'il dépasse -->
+      <!-- Sinon il risque de déformer les cartes -->
+      <mat-card-title class="title">
+        {{ product.nom | slice: 0:18 }}
+        <!-- Si le nom est tronqué, alors on ajoute '...' -->
+        <span *ngIf="product.nom.length > 18">...</span>
+      </mat-card-title>
+      <!-- Gestion de l'affichage en fonction de l'attribut qui sera passé -->
+      <!-- En effet, les films et les albums n'ont pas les mêmes attributs ! -->
+      <mat-card-subtitle class="subtitle" *ngIf="product.artiste">{{product.artiste}}</mat-card-subtitle>
+      <mat-card-subtitle class="subtitle" *ngIf="product.real">{{product.real}}</mat-card-subtitle>
+    </mat-card-header>
+    <hr />
+    <!-- Ajout d'une image par défaut au cas ou il n'y en a pas -->
+    <img
+      class="cover"
+      *ngIf="!product.img"
+      mat-card-image
+      src="https://www.le-monde-du-stickers.fr/17138-large_default/sticker-licorne-cool.jpg"
+      alt="Licorne"
+    />
+    <!-- S'il y a une image, alors on l'affiche -->
+    <img
+      class="cover"
+      *ngIf="product.img"
+      mat-card-image
+      [src]="product.img"
+      [alt]="product.nom"
+    />
+    <!-- Si synopsis il y a, alors on affiche les 14. premiers caratères uniquement -->
+    <mat-card-content *ngIf="product.synopsis">
+      <p>{{ product.synopsis | slice: 0:140 }}...</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- Ici, on génère bien le lien complet en ajoutant le type (film/album) en plus de l'ID -->
+      <button *ngIf="product.real" mat-button routerLink="/products/films/{{product.id}}">
+        Détails
+      </button>
+      <button *ngIf="product.artiste" mat-button routerLink="/products/albums/{{product.id}}">
+        Détails
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

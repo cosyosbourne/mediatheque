@@ -1,0 +1,51 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <!-- Ici, on enlève le tronquage -->
+      <mat-card-title class="title">
+        {{ product.nom }}
+      </mat-card-title>
+      <!-- On conserve la gestion des attributs conditionnels-->
+      <mat-card-subtitle class="subtitle" *ngIf="product.artiste">{{product.artiste}}</mat-card-subtitle>
+      <mat-card-subtitle class="subtitle" *ngIf="product.real">{{product.real}}</mat-card-subtitle>
+    </mat-card-header>
+    <hr />
+    <img
+      class="cover"
+      *ngIf="!product.img"
+      mat-card-image
+      src="https://www.le-monde-du-stickers.fr/17138-large_default/sticker-licorne-cool.jpg"
+      alt="Licorne"
+    />
+    <img
+      class="cover"
+      *ngIf="product.img"
+      mat-card-image
+      [src]="product.img"
+      [alt]="product.nom"
+    />
+    <hr>
+     <!-- On modifie un peu cette partie pour que l'affichage soit un peu meilleur et conditionnel -->
+    <mat-card-content>
+      <div *ngIf="product.annee">
+        <h3>Année </h3>
+        <p>{{product.annee}}</p>
+      </div>
+      <div *ngIf="product.synopsis">
+        <h3>Synopsis</h3>
+        <p >{{product.synopsis}}</p>
+      </div>
+      <div *ngIf="product.details">
+        <h3>Détails</h3>
+        <p>{{product.details}}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- On ajoute le bouton qui permet de revenir en arrière-->
+      <button mat-button routerLink="/products">
+        Retour
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
